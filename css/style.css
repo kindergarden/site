@@ -1801,6 +1801,7 @@ table.food tr:not(:last-child) {
     background: url(../images/Apelsin-2_1.png) 0 0 no-repeat;
 }
 
+
 table.price {
     width: 100%;
 }
