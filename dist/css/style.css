@@ -1230,6 +1230,7 @@ h6 {
 }
 
 .thumb-isotope {
+    height: 300px;
 }
 
 .thumb-isotope .thumbnail {
@@ -1326,6 +1327,12 @@ h6 {
 
 .thumb-isotope .thumbnail a:hover .caption {
     color: #fcf4db;
+}
+
+.thumbnail{
+    width: 300px;
+    height: 300px;
+    overflow: auto;
 }
 
 /* ============================= accordion ====================== */
