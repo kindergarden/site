@@ -14,6 +14,7 @@
 <link rel="stylesheet" href="css/bootstrap-responsive.css" type="text/css" media="screen">    
 <link rel="stylesheet" href="css/camera.css" type="text/css" media="screen">
 <link rel="stylesheet" href="css/style.css" type="text/css" media="screen">
+<link rel="stylesheet" href="css/touchTouch.css" type="text/css" media="screen">
 
 <script type="text/javascript" src="js/jquery.js"></script>  
 <script type="text/javascript" src="js/jquery.easing.1.3.js"></script>
@@ -23,6 +24,9 @@
 
 <script type="text/javascript" src="js/camera.js"></script>
 <script type="text/javascript" src="js/jquery.mobile.customized.min.js"></script>
+
+<script type="text/javascript" src="js/touchTouch.jquery.js"></script>
+<script type="text/javascript" src="js/jquery.isotope.min.js"></script>
 
 <script type="text/javascript" src="js/jquery.spritely-0.6.1.js"></script>
 
@@ -52,10 +56,14 @@ $(document).ready(function() {
 
 }); //
 $(window).load(function() {
-  //
+
+    // touchTouch
+    $('.thumb-isotope .thumbnail a').touchTouch();
+
 
 }); //
-</script>   
+</script>
+
 <!--[if lt IE 8]>
     <div style='text-align:center'><a href="http://www.microsoft.com/windows/internet-explorer/default.aspx?ocid=ie6_countdown_bannercode"><img src="http://www.theie6countdown.com/images/upgrade.jpg"border="0"alt=""/></a></div>  
   <![endif]-->    
@@ -137,15 +145,13 @@ $(window).load(function() {
         <div class="row">
             <div class="span12">
 
-                <h1>Gallery</h1>
-
                 <ul class="thumbnails" id="isotope-items">
                     <li class="span4 isotope-element isotope-filter1">
                         <div class="thumb-isotope">
                             <div class="thumbnail clearfix">
                                 <a href="images/gallery/2E480FAF-DF53-48E6-ACF5-545FB9255C3E.JPG">
                                     <figure>
-                                        <img src="thumbs/images/gallery/2E480FAF-DF53-48E6-ACF5-545FB9255C3E.JPG" alt=""><em></em>
+                                        <img src="images/gallery/thumbs/2E480FAF-DF53-48E6-ACF5-545FB9255C3E.JPG" alt=""><em></em>
                                     </figure>
                                     <div class="caption">
                                         Lorem ipsum dolore summabe
@@ -158,9 +164,9 @@ $(window).load(function() {
                     <li class="span4 isotope-element isotope-filter2">
                         <div class="thumb-isotope">
                             <div class="thumbnail clearfix">
-                                <a href="images/blank.png">
+                                <a href="images/gallery/34BED680-FDF0-46D9-9D0D-250D353B452D.JPG">
                                     <figure>
-                                        <img src="thumbs/images/gallery/3FEEA7B7-0475-4FC8-94C9-927C0B9DC281.JPG" alt=""><em></em>
+                                        <img src="images/gallery/thumbs/34BED680-FDF0-46D9-9D0D-250D353B452D.JPG" alt=""><em></em>
                                     </figure>
                                     <div class="caption">
                                         Lorem ipsum dolore summabe
@@ -173,9 +179,9 @@ $(window).load(function() {
                     <li class="span4 isotope-element isotope-filter3">
                         <div class="thumb-isotope">
                             <div class="thumbnail clearfix">
-                                <a href="images/blank.png">
+                                <a href="images/gallery/6D7DECB4-65E3-474B-B637-8858B6F0AB13.JPG">
                                     <figure>
-                                        <img src="thumbs/images/gallery/6D7DECB4-65E3-474B-B637-8858B6F0AB13.JPG" alt=""><em></em>
+                                        <img src="images/gallery/thumbs/6D7DECB4-65E3-474B-B637-8858B6F0AB13.JPG" alt=""><em></em>
                                     </figure>
                                     <div class="caption">
                                         Lorem ipsum dolore summabe
@@ -188,93 +194,124 @@ $(window).load(function() {
                     <li class="span4 isotope-element isotope-filter1">
                         <div class="thumb-isotope">
                             <div class="thumbnail clearfix">
-                                <a href="images/blank.png">
+                                <a href="images/gallery/dance.JPG">
                                     <figure>
-                                        <img src="images/gallery/" alt=""><em></em>
+                                        <img src="images/gallery/thumbs/dance.JPG" alt=""><em></em>
                                     </figure>
                                     <div class="caption">
                                         Lorem ipsum dolore summabe
                                     </div>
                                 </a>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li class="span4 isotope-element isotope-filter2">
-                        <div class="thumb-isotope">
-                            <div class="thumbnail clearfix">
-                                <a href="images/blank.png">
-                                    <figure>
-                                        <img src="images/gallery05.jpg" alt=""><em></em>
-                                    </figure>
-                                    <div class="caption">
-                                        Lorem ipsum dolore summabe
-                                    </div>
-                                </a>
-
-                            </div>
-                        </div>
-                    </li>
-                    <li class="span4 isotope-element isotope-filter3">
-                        <div class="thumb-isotope">
-                            <div class="thumbnail clearfix">
-                                <a href="images/blank.png">
-                                    <figure>
-                                        <img src="images/gallery06.jpg" alt=""><em></em>
-                                    </figure>
-                                    <div class="caption">
-                                        Lorem ipsum dolore summabe
-                                    </div>
-                                </a>
-
+                    
                             </div>
                         </div>
                     </li>
                     <li class="span4 isotope-element isotope-filter1">
                         <div class="thumb-isotope">
                             <div class="thumbnail clearfix">
-                                <a href="images/blank.png">
+                                <a href="images/gallery/gramota.JPG">
                                     <figure>
-                                        <img src="images/gallery07.jpg" alt=""><em></em>
+                                        <img src="images/gallery/thumbs/gramota.JPG" alt=""><em></em>
                                     </figure>
                                     <div class="caption">
                                         Lorem ipsum dolore summabe
                                     </div>
                                 </a>
-
+                    
                             </div>
                         </div>
                     </li>
-                    <li class="span4 isotope-element isotope-filter3">
+                    <li class="span4 isotope-element isotope-filter1">
                         <div class="thumb-isotope">
                             <div class="thumbnail clearfix">
-                                <a href="images/blank.png">
+                                <a href="images/gallery/math.JPG">
                                     <figure>
-                                        <img src="images/gallery08.jpg" alt=""><em></em>
+                                        <img src="images/gallery/thumbs/math.JPG" alt=""><em></em>
                                     </figure>
                                     <div class="caption">
                                         Lorem ipsum dolore summabe
                                     </div>
                                 </a>
-
+                    
                             </div>
                         </div>
                     </li>
-                    <li class="span4 isotope-element isotope-filter3">
+                    <li class="span4 isotope-element isotope-filter1">
                         <div class="thumb-isotope">
                             <div class="thumbnail clearfix">
-                                <a href="images/blank.png">
+                                <a href="images/gallery/izo.JPG">
                                     <figure>
-                                        <img src="images/gallery09.jpg" alt=""><em></em>
+                                        <img src="images/gallery/thumbs/izo.JPG" alt=""><em></em>
                                     </figure>
                                     <div class="caption">
                                         Lorem ipsum dolore summabe
                                     </div>
                                 </a>
-
+                    
                             </div>
                         </div>
                     </li>
+                    <li class="span4 isotope-element isotope-filter1">
+                        <div class="thumb-isotope">
+                            <div class="thumbnail clearfix">
+                                <a href="images/gallery/IMG_0218.JPG">
+                                    <figure>
+                                        <img src="images/gallery/thumbs/IMG_0218.JPG" alt=""><em></em>
+                                    </figure>
+                                    <div class="caption">
+                                        Lorem ipsum dolore summabe
+                                    </div>
+                                </a>
+                    
+                            </div>
+                        </div>
+                    </li>
+                    <li class="span4 isotope-element isotope-filter1">
+                        <div class="thumb-isotope">
+                            <div class="thumbnail clearfix">
+                                <a href="images/gallery/IMG_1293.JPG">
+                                    <figure>
+                                        <img src="images/gallery/thumbs/IMG_1293.JPG" alt=""><em></em>
+                                    </figure>
+                                    <div class="caption">
+                                        Lorem ipsum dolore summabe
+                                    </div>
+                                </a>
+                    
+                            </div>
+                        </div>
+                    </li>
+                    <li class="span4 isotope-element isotope-filter1">
+                        <div class="thumb-isotope">
+                            <div class="thumbnail clearfix">
+                                <a href="images/gallery/IMG_1296.JPG">
+                                    <figure>
+                                        <img src="images/gallery/thumbs/IMG_1296.JPG" alt=""><em></em>
+                                    </figure>
+                                    <div class="caption">
+                                        Lorem ipsum dolore summabe
+                                    </div>
+                                </a>
+                    
+                            </div>
+                        </div>
+                    </li>
+                    <li class="span4 isotope-element isotope-filter1">
+                        <div class="thumb-isotope">
+                            <div class="thumbnail clearfix">
+                                <a href="images/gallery/IMG_2096.JPG">
+                                    <figure>
+                                        <img src="images/gallery/thumbs/IMG_2096.JPG" alt=""><em></em>
+                                    </figure>
+                                    <div class="caption">
+                                        Lorem ipsum dolore summabe
+                                    </div>
+                                </a>
+                    
+                            </div>
+                        </div>
+                    </li>
+
                 </ul>
 
             </div>

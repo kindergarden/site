@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  	<meta charset="utf-8">
+  	<title>Secure Contact</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <meta name="description" content="">
+
+ <!-- styles -->
+    <link href="css/bootstrap.css" rel="stylesheet">
+    <link href="css/bootstrap-responsive.css" rel="stylesheet">
+    <link href="css/docs.css" rel="stylesheet">
+    <link href="css/prettify.css" rel="stylesheet">
+    <link href="css/pw_docs.css" rel="stylesheet">
+
+    <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+    <!--[if lt IE 9]>
+    <link href="css/ie.css" rel="stylesheet">
+      <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+    <![endif]-->
+
+</head>
+
+  <body data-spy="scroll" data-target=".bs-docs-sidebar">
+
+
+
+<!-- Subhead
+================================================== -->
+<header class="jumbotron subhead" id="overview">
+  <div class="container">
+	<h1>CSS3 Tricks</h1>
+	<p class="lead">Please note that this will only work properly in modern browsers that support the CSS3 properties in use.</p>
+  </div>
+</header>
+
+  	<div class="container">
+		<div class="page-header">
+		    <h1>Secure Contact Form</h1>
+		</div>
+
+		<div class="row">
+			<div class="span12">
+				<h3>Basic structure</h3>
+				<div id="note"></div>
+      			<div id="fields" class="contact-form">
+      				<form id="ajax-contact-form" class="form-horizontal" action="javascript:alert('success!'); ">
+      					<div class="control-group">
+      						<label class="control-label" for="inputName">Your name:</label>
+      							<input type="text" name="name" >
+      					</div>
+      					<div class="control-group">
+      						<label class="control-label" for="inputEmail">Your Email:</label>
+      							<input type="text" name="email" >
+      					</div>
+      					<div class="control-group">
+      						<label class="control-label" for="inputEmail">Subject:</label>
+      							<input type="text" name="subject" >
+      					</div>
+      					<div class="control-group">
+      						<label class="control-label" for="inputEmail">Your Message:</label>
+      							<textarea name="content" rows="3"></textarea>
+      					</div>
+      					<div class="control-group captcha">
+      					<label class="control-label " for="captcha">Captcha:</label>
+      						<img src="img/captcha.jpg" style="margin:3px 15px 5px 0px; width:100px; height:35px; float:left">
+      						<input type="text" name="capthca" value="" style="float:left; width:65px">
+      						<div style="clear:both"></div>
+      					</div>        
+      					<button type="submit" class="btn btn_ btn-small_">submit</button>
+      				</form>
+      			</div>  
+
+				<pre class="prettyprint linenums">
+
+				&lt;div id="note"&gt;&lt;/div&gt;
+      				&lt;div id="fields" class="contact-form"&gt;
+	      				&lt;form id="ajax-contact-form" class="form-horizontal" action="javascript:alert('success!'); "&gt;
+	      					&lt;div class="control-group"&gt;
+	      						&lt;label class="control-label" for="inputName"&gt;Your name:&lt;/label&gt;
+	      							&lt;input type="text" name="name" &gt;
+	      					&lt;/div&gt;
+	      					&lt;div class="control-group"&gt;
+	      						&lt;label class="control-label" for="inputEmail"&gt;Your Email:&lt;/label&gt;
+	      							&lt;input type="text" name="email" &gt;
+	      					&lt;/div&gt;
+	      					&lt;div class="control-group"&gt;
+	      						&lt;label class="control-label" for="inputEmail"&gt;Subject:&lt;/label&gt;
+	      							&lt;input type="text" name="subject" &gt;
+	      					&lt;/div&gt;
+	      					&lt;div class="control-group"&gt;
+	      						&lt;label class="control-label" for="inputEmail"&gt;Your Message:&lt;/label&gt;
+	      							&lt;textarea name="content" rows="3"&gt;&lt;/textarea&gt;
+	      					&lt;/div&gt;
+	      					&lt;div class="control-group captcha"&gt;
+	      					&lt;label class="control-label " for="captcha"&gt;Captcha:&lt;/label&gt;
+	      						&lt;img src="captcha/captcha.php"&gt;
+	      						&lt;input type="text" name="capthca" value=""&gt;
+	      						&lt;div style="clear:both"&gt;&lt;/div&gt;
+	      					&lt;/div&gt;        
+	      					&lt;button type="submit" class="btn btn_ btn-small_"&gt;submit&lt;/button&gt;
+	      				&lt;/form&gt;
+      				&lt;/div&gt;    
+				</pre>
+
+					<h3>Initialization</h3>
+					<pre class="prettyprint linenums">
+
+					      $("#ajax-contact-form").submit(function() 
+					      { var str = $(this).serialize(); $.ajax( 
+					        { type: "POST", url: "contact.php", data: str, success: function(msg)
+					    			{ if(msg == 'OK') // Message Sent? Show the 'Thank You' message and hide the form
+					    				{ result = '&lt;div class="notification_ok"&gt;Your message has been sent. Thank you!&lt;br&gt; 
+					    				&lt;a href="#" onclick="freset();return false;"&gt;send another mail&lt;/a&gt;&lt;/div&gt;'; 
+					            $("#fields").hide(); 
+					            } 							
+					            else
+					    	    { 
+					              result = msg; 
+					            } 
+					            $("#note").html(result); 
+					          } 
+					    	  }); 
+					        return false; 
+					      });
+					      function freset()
+					      {
+					     	  $("#note").html(''); 	
+					        document.getElementById('ajax-contact-form').reset(); 	
+					        $("#fields").show();
+					      }
+  					</pre>
+
+  					<p>Open contact_config.php file and replace <strong>"YOU_EMAIL_ADDRESS"</strong></p>
+			</div>
+		</div>
+
+	</div>
+
+
+   <!-- Footer
+    ================================================== -->
+    <footer class="footer">
+      <div class="container">
+        <p class="pull-right"><a href="#">Back to top</a></p>
+        <p>Designed and built with all the love in the world <a href="http://twitter.com/twitter" target="_blank">@twitter</a> by <a href="http://twitter.com/mdo" target="_blank">@mdo</a> and <a href="http://twitter.com/fat" target="_blank">@fat</a>.</p>
+        <p>Code licensed under the <a href="http://www.apache.org/licenses/LICENSE-2.0" target="_blank">Apache License v2.0</a>. Documentation licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <p>Icons from <a href="http://glyphicons.com">Glyphicons Free</a>, licensed under <a href="http://creativecommons.org/licenses/by/3.0/">CC BY 3.0</a>.</p>
+        <ul class="footer-links">
+          <li><a href="http://blog.getbootstrap.com">Read the blog</a></li>
+          <li><a href="https://github.com/twitter/bootstrap/issues?state=open">Submit issues</a></li>
+          <li><a href="https://github.com/twitter/bootstrap/wiki">Roadmap and changelog</a></li>
+        </ul>
+      </div>
+    </footer>
+
+
+
+    <script type="text/javascript" src="http://platform.twitter.com/widgets.js"></script>
+    <script src="js/jquery.js"></script>
+    <script src="js/prettify.js"></script>
+    <script src="js/bootstrap-transition.js"></script>
+    <script src="js/bootstrap-alert.js"></script>
+    <script src="js/bootstrap-modal.js"></script>
+    <script src="js/bootstrap-dropdown.js"></script>
+    <script src="js/bootstrap-scrollspy.js"></script>
+    <script src="js/bootstrap-tab.js"></script>
+    <script src="js/bootstrap-tooltip.js"></script>
+    <script src="js/bootstrap-popover.js"></script>
+    <script src="js/bootstrap-button.js"></script>
+    <script src="js/bootstrap-collapse.js"></script>
+    <script src="js/bootstrap-carousel.js"></script>
+    <script src="js/bootstrap-typeahead.js"></script>
+    <script src="js/bootstrap-affix.js"></script>
+    <script src="js/application.js"></script>
+    <script src="js/jquery.cookie.js"></script>
+    <script type="text/javascript">                                     
+    $(document).ready(function()
+    { $("#ajax-contact-form").submit(function() 
+      { var str = $(this).serialize(); $.ajax( 
+        { type: "POST", url: "contact.php", data: str, success: function(msg)
+    			{ if(msg == 'OK') // Message Sent? Show the 'Thank You' message and hide the form
+    				{ result = '<div class="notification_ok">Your message has been sent. Thank you!<br> <a href="#" onclick="freset();return false;">send another mail</a></div>'; 
+            $("#fields").hide(); 
+            } 							
+            else
+    				{ 
+              result = msg; 
+            } 
+            $("#note").html(result); 
+          } 
+    	  }); 
+        return false; 
+      });
+    });
+    function freset()
+      {
+     	  $("#note").html(''); 	
+        document.getElementById('ajax-contact-form').reset(); 	
+        $("#fields").show();
+      }
+</script> 	
+</body>
+</html>
